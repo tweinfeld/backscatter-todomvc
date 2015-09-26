@@ -6,3 +6,24 @@ remove this comment if used
 remove this file if not
 
 */
+
+
+.filters li button.filter {
+	display: inline-block;
+	cursor: pointer;
+	color: inherit;
+	margin: 0 3px;
+	padding: 3px 7px;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+.filters li button.filter.selected,
+.filters li button.filter:hover {
+	border-color: rgba(175, 47, 47, 0.1);
+}
+
+.filters li button.filter.selected {
+	border-color: rgba(175, 47, 47, 0.2);
+}
