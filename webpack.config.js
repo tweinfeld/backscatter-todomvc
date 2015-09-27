@@ -3,10 +3,10 @@ var path = require('path'),
 
 module.exports = {
 	context: path.join(__dirname, "/js"),
-	entry: "./main",
+	entry: "./bootstrap",
 	output: {
-		path: path.join(__dirname, "dist"),
-		filename: "main.js"
+		path: __dirname,
+		filename: "app.js"
 	},
 	module: {
 		loaders: [

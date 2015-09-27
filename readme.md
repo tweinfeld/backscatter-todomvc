@@ -1,19 +1,10 @@
-# TodoMVC App Template
+# Backscatter + Backbone + React TodoMVC
 
-> Template used for creating [TodoMVC](http://todomvc.com) apps
-
-![](https://github.com/tastejs/todomvc-app-css/raw/master/screenshot.png)
-
-
-## Getting started
-
-- Read the [Application Specification](https://github.com/tastejs/todomvc/blob/master/app-spec.md) before touching the template.
-
-- Delete this file and rename `app-readme.md` to `readme.md` and fill it out.
-
-- Clone this repo and install the dependencies with [npm](https://npmjs.com) by running: `npm install`.
+> Backscatter is a tiny [Backbone](http://backbonejs.org/) extension which helps you keep track of events in your entire Backbone model tree. Whenever Backscatter detects an event from a model somewhere in your tree (below a certain "root model"), it relays it to you. This makes it super useful for triggering React renders!
+>
+> [Backscatter](https://github.com/tweinfeld/todomvc-app-css/raw/master/screenshot.png)
 
 
-## License
+## Learning Backscatter
 
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" rel="dct:type">work</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://sindresorhus.com" property="cc:attributionName" rel="cc:attributionURL">TasteJS</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.en_US">Creative Commons Attribution 4.0 International License</a>.
+- [Backscatter's documentation](https://github.com/tweinfeld/backscatter/blob/master/readme.md) is a good place to start.

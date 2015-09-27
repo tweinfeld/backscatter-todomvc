@@ -1,6 +1,11 @@
 {
+  "private": true,
+  "scripts": {
+    "postinstall": "webpack"
+  },
   "dependencies": {
     "backscatter": "^1.0.4",
+    "underscore": ">=1.7.0",
     "backbone": "^1.2.3",
     "react": "^0.13.3",
     "todomvc-app-css": "^2.0.0",
