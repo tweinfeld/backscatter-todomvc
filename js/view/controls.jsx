@@ -26,7 +26,10 @@ export default class Controls extends React.Component {
 					</button></li>
 				) }
 			</ul>
-			<button onClick={ this.props.onRemove } className="clear-completed">Clear completed</button>
+			<button
+				style={{ display: _(this.props.tasks).chain().where({ completed: true }).some().value() ? "inline-block" : "none" }}
+				onClick={ this.props.onRemove }
+				className="clear-completed">Clear completed</button>
 		</footer>
 	}
 }
