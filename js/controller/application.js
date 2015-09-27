@@ -5,6 +5,8 @@ import SessionModel from '../model/session'
 
 export default (window) => {
 
+	const trim = (text) => (text.match(/^\s*(.+?)\s*$/) || []).pop();
+
 	let session = new SessionModel;
 	session.get('tasks').set(JSON.parse(window.localStorage["todo-backscatter"] || "[]"));
 
@@ -14,10 +16,10 @@ export default (window) => {
 			filter: session.get('filter'),
 			onAllTasksToggleCompleted: () => session.get('tasks').toggleCompleted(),
 			onTaskToggleCompleted: (taskId) => session.get('tasks').get(taskId).toggleCompleted(),
-			onTaskRename: (taskId, newDescription) => session.get('tasks').get(taskId).set({ description: newDescription }, { validate: true }),
+			onTaskRename: (taskId, newDescription) => session.get('tasks').get(taskId).set({ description: trim(newDescription) }, { validate: true }),
 			onFilterChange: (filter) => session.set({ filter }),
 			onTaskRemove: (taskId) => session.get('tasks').remove(session.get('tasks').get(taskId)),
-			onTaskAdd: (description) => { session.get('tasks').add({ id: _.uniqueId('task-'), description }, { validate: true }) },
+			onTaskAdd: (description) => { session.get('tasks').add({ id: _.uniqueId('task-'), description: trim(description) }, { validate: true }) },
 			onAllCompletedTasksRemove: ()=> session.get('tasks').removeCompleted()
 		}), document.getElementsByTagName('main')[0]);
 	};
