@@ -5,7 +5,7 @@ import SessionModel from '../model/session'
 
 export default (window) => {
 
-	const trim = (text) => (text.match(/^\s*(.+?)\s*$/) || []).pop();
+	const trim = (text) => (text.match(/^\s*(.+?)\s*$/) || [""]).pop();
 
 	let session = new SessionModel;
 	session.get('tasks').set(JSON.parse(window.localStorage["todo-backscatter"] || "[]"));
