@@ -1,7 +1,7 @@
 import _ from 'underscore';
 import React from 'react';
-import Main from './view/main';
-import SessionModel from './model/session'
+import Main from '../view/main';
+import SessionModel from '../model/session'
 
 export default (window) => {
 
