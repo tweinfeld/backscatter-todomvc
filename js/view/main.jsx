@@ -25,7 +25,7 @@ export default class Main extends React.Component {
 				<input className="toggle-all" onChange={ this.props.onAllTasksToggleCompleted } checked={ this.props.tasks.filter(_.matches({ completed: true })).length === this.props.tasks.length } type="checkbox"/>
 				<TaskList
 					filter={ this.props.filter }
-					tasks={ this.props.tasks.map((task) => Object.assign(task, {
+					tasks={ this.props.tasks.map((task) => _.extend(task, {
 						onToggleCompleted: _.partial(this.props.onTaskToggleCompleted, task.id),
 						onRename: _.partial(this.props.onTaskRename, task.id),
 						onRemove: _.partial(this.props.onTaskRemove, task.id)
