@@ -7,4 +7,4 @@
 
 ## Learning Backscatter
 
-- [Backscatter's documentation](https://github.com/tweinfeld/backscatter/blob/master/readme.md) is a good place to start.
+- [Backscatter's documentation on GitHub](https://github.com/tweinfeld/backscatter) is a good place to start.
