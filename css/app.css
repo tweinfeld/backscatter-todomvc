@@ -9,6 +9,8 @@ remove this file if not
 
 
 .filters li button.filter {
+	position: relative;
+	top: -3px;
 	display: inline-block;
 	cursor: pointer;
 	color: inherit;
