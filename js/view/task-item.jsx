@@ -40,7 +40,7 @@ export default class TaskItem extends React.Component {
 				   value={ this.state.description }
 				   onChange={ _.compose(this.setState.bind(this), (e) => ({ description: e.target.value })) }
 				   onKeyDown={ this.handleKeyDown.bind(this) }
-				   onBlur={ this.endEditing.bind(this) }
+				   onBlur={ this.renameAndEnd.bind(this) }
 			/>
 		</li>
 	}
@@ -53,15 +53,25 @@ export default class TaskItem extends React.Component {
 		});
 	}
 
-	endEditing(){
-		this.setState({ "editing": false });
+	renameAndEnd(event) {
+		this.props.onRename(event.target.value);
+		this.setState({
+			"editing": false
+		})
 	}
 
 	handleKeyDown(event){
-		({
-			[KEY_ESCAPE]: this.endEditing,
-			[KEY_ENTER]: _.compose(_.partial(this.props.onRename, event.target.value), this.endEditing)
-		}[event.which] || _.noop).call(this);
+		switch(event.which){
+			case KEY_ESCAPE:
+				this.setState({
+					"editing": false,
+					"description": this.props.description
+				});
+			break;
+			case KEY_ENTER:
+				this.renameAndEnd(event);
+			break;
+		}
 	}
 }
 
